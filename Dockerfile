@@ -1,6 +1,3 @@
-FROM nginx
-
-RUN mkdir /etc/nginx/logs && touch /etc/nginx/logs/static.log
-
-ADD ./nginx.conf /etc/nginx/conf.d/default.conf
-ADD /src /www
+FROM php:7.1-apache
+copy src/ /var/www/html
+EXPOSE 80
